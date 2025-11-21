@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/sakuraplantshop/static/css/main.ec75c591.css",
-    "main.js": "/sakuraplantshop/static/js/main.e7908397.js",
+    "main.css": "/sakuraplantshop/static/css/main.56818ef7.css",
+    "main.js": "/sakuraplantshop/static/js/main.50914a99.js",
     "index.html": "/sakuraplantshop/index.html",
-    "main.ec75c591.css.map": "/sakuraplantshop/static/css/main.ec75c591.css.map",
-    "main.e7908397.js.map": "/sakuraplantshop/static/js/main.e7908397.js.map"
+    "main.56818ef7.css.map": "/sakuraplantshop/static/css/main.56818ef7.css.map",
+    "main.50914a99.js.map": "/sakuraplantshop/static/js/main.50914a99.js.map"
   },
   "entrypoints": [
-    "static/css/main.ec75c591.css",
-    "static/js/main.e7908397.js"
+    "static/css/main.56818ef7.css",
+    "static/js/main.50914a99.js"
   ]
 }
