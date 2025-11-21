@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/sakuraplantshop/static/css/main.ec75c591.css",
+    "main.js": "/sakuraplantshop/static/js/main.e7908397.js",
+    "index.html": "/sakuraplantshop/index.html",
+    "main.ec75c591.css.map": "/sakuraplantshop/static/css/main.ec75c591.css.map",
+    "main.e7908397.js.map": "/sakuraplantshop/static/js/main.e7908397.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ec75c591.css",
+    "static/js/main.e7908397.js"
+  ]
+}
