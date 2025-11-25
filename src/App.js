@@ -7,19 +7,31 @@ import Home from "./pages/Home";
 import Catalog from "./pages/Catalog";
 import Profile from "./pages/Profile";
 import Cart from "./pages/Cart";
+import "./App.css";
 
 function App() {
   return (
     <GoogleOAuthProvider clientId="951971411963-h0bofla98l3u281lqje8vddlbch5mc7j.apps.googleusercontent.com">
-      <Router>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/catalog" element={<Catalog />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/cart" element={<Cart />} />
-        </Routes>
-        <Footer />
+      {/* Добавляем basename для корректной работы на GitHub Pages */}
+      <Router basename="/sakuraplantshop">
+        <div className="App">
+          <Header />
+          <main>
+            <Routes>
+              {/* Главная страница */}
+              <Route path="/" element={<Home />} />
+              {/* Каталог */}
+              <Route path="/catalog" element={<Catalog />} />
+              {/* Профиль */}
+              <Route path="/profile" element={<Profile />} />
+              {/* Корзина */}
+              <Route path="/cart" element={<Cart />} />
+              {/* Если путь не найден, редиректим на Home */}
+              <Route path="*" element={<Home />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
       </Router>
     </GoogleOAuthProvider>
   );

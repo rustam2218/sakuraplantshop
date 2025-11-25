@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./Cart.css";
 
 export default function Cart() {
@@ -26,34 +27,42 @@ export default function Cart() {
   return (
     <div className="cart-wrapper">
       <header>
-        <h1>Ваша корзина</h1>
+        <h1>🛒 Ваша корзина</h1>
       </header>
 
       <section className="cart-container">
-        <div className="cart-items">
-          {cartItems.length === 0 ? (
-            <p>Корзина пуста</p>
-          ) : (
-            cartItems.map((item, index) => (
-              <div key={index} className="cart-item">
-                <img src={item.img} alt={item.name} className="cart-item-img" />
-                <div className="cart-item-info">
-                  <h3>{item.name}</h3>
-                  <p>{item.price.toLocaleString()} ₽</p>
-                </div>
-              </div>
-            ))
-          )}
-        </div>
-
-        <div className="cart-summary">
-          <div className="total">
-            Общая сумма: <span>{totalPrice.toLocaleString()} ₽</span>
+        {cartItems.length === 0 ? (
+          <div className="empty-message">
+            <p>Ваша корзина пуста 😢</p>
+            <p>Пока вы ничего не добавили. Приглашаем вас в каталог!</p>
+            <Link to="/catalog" className="continue-shopping">
+              Перейти в каталог
+            </Link>
           </div>
-          <button className="clear-cart" onClick={clearCart}>
-            Очистить корзину
-          </button>
-        </div>
+        ) : (
+          <>
+            <div className="cart-items">
+              {cartItems.map((item, index) => (
+                <div key={index} className="cart-item">
+                  <img src={item.img} alt={item.name} className="cart-item-img" />
+                  <div className="cart-item-info">
+                    <h3>{item.name}</h3>
+                    <p>{item.price.toLocaleString()} ₽</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="cart-summary">
+              <div className="total">
+                Итого: <span>{totalPrice.toLocaleString()} ₽</span>
+              </div>
+              <button className="clear-cart" onClick={clearCart}>
+                Очистить корзину
+              </button>
+            </div>
+          </>
+        )}
       </section>
     </div>
   );

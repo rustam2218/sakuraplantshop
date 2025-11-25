@@ -1,36 +1,67 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f8f8f8;
-}
-
-.site-header,
-.site-footer {
-  background: #2e7d32;
-  color: white;
-  padding: 15px;
-  text-align: center;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 10px;
-}
-
-.catalog-grid {
+.App {
+  min-height: 100vh;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  padding: 20px;
+  flex-direction: column;
 }
 
-.plant-card {
-  background: white;
-  padding: 10px;
-  border-radius: 8px;
-  width: 180px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  text-align: center;
+main {
+  flex: 1;
+}
+
+/* Containers */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+/* Buttons */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #2d5016;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  button {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
 }

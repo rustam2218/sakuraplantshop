@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../firebase";
-import "./style.css";
+import "./Home.css";
 
 const adminEmails = ["sakura.khujand@gmail.com", "rustam.n1822@gmail.com"];
 
@@ -46,20 +46,19 @@ export default function Home() {
       <header className="navbar">
         <div className="icons">
           <Link to="/catalog">
-            <img src="/images/search 1.svg" alt="Поиск" />
+            <img src={process.env.PUBLIC_URL + "/images/search1.svg"} alt="Поиск" />
           </Link>
-          <Link to="/cart">
-            <img src="/images/shopping-cart 1.svg" alt="Корзина" />
-          </Link>
+          {/* <Link to="/cart">
+            <img src={process.env.PUBLIC_URL + "/images/shopping-cart1.svg"} alt="Корзина" />
+          </Link> */}
         </div>
 
         {!user && (
-        <button className="google-btn" onClick={loginWithGoogle}>
-        <img src="/images/Без названия111.jpg" alt="Google" />
-        Войти через Google
-      </button>
-    )}
-
+          <button className="google-btn" onClick={loginWithGoogle}>
+            <img src={process.env.PUBLIC_URL + "/images/Безназвания111.jpg"} alt="Google" />
+            Войти через Google
+          </button>
+        )}
 
         {user && (
           <div className="user-info">
@@ -81,7 +80,7 @@ export default function Home() {
       {/* ГЛАВНЫЙ БЛОК */}
       <main className="container">
         <div className="plantphoto">
-          <img src="/images/MaskGroup.svg" alt="Plant" />
+          <img src={process.env.PUBLIC_URL + "/images/MaskGroup.svg"} alt="Plant" />
         </div>
         <div className="text">
           <h1>
@@ -104,46 +103,28 @@ export default function Home() {
       {/* ФИЧИ */}
       <section className="features">
         <div className="feature-box">
-          <img src="/images/fast 1.svg" alt="Fast Delivery" />
+          <img src={process.env.PUBLIC_URL + "/images/fast1.svg"} alt="Fast Delivery" />
           <div className="feature-title">Быстрая доставка</div>
           <div className="feature-text">С Sakura вы получаете радость без ожидания</div>
         </div>
 
         <div className="feature-box">
-          <img src="/images/headphones 1.svg" alt="Support" />
+          <img src={process.env.PUBLIC_URL + "/images/headphones1.svg"} alt="Support" />
           <div className="feature-title">Консультация от профессионалов</div>
           <div className="feature-text">Поддержка от команды, которая знает о зелени всё</div>
         </div>
 
         <div className="feature-box">
-          <img src="/images/plant 1.svg" alt="Original Plants" />
+          <img src={process.env.PUBLIC_URL + "/images/plant1.svg"} alt="Original Plants" />
           <div className="feature-title">Оригинальные растения</div>
           <div className="feature-text">Живое искусство, которое не требует слов</div>
         </div>
 
         <div className="feature-box">
-          <img src="/images/dollar-symbol 1.svg" alt="Affordable Price" />
+          <img src={process.env.PUBLIC_URL + "/images/dollar-symbol1.svg"} alt="Affordable Price" />
           <div className="feature-title">Приемлемые цены</div>
           <div className="feature-text">Уют не должен быть дорогим</div>
         </div>
-      </section>
-
-      {/* --- БЛОК ПОСЛЕ FEATURES --- */}
-      <section className="home-banner">
-        <div className="text-column">
-          <h1>Sakura — ваш уютный оазис зелени прямо дома 🌸</h1>
-          <p>
-            🌿 Sakura — интернет-магазин комнатных растений с душой 🌸 Наш
-            магазин — это место, где каждый может найти идеальное растение для
-            своего интерьера, настроения и образа жизни.
-            <br /> Упаковка, подходящая для подарка — потому что растения дарят
-            радость.
-            <br />
-            🌱 Sakura — это не просто покупки, это путь к уюту, гармонии и
-            живой атмосфере в вашем доме.
-          </p>
-        </div>
-        <div className="image-column"></div>
       </section>
 
       {/* ПУСТОЙ СПИСОК ТОВАРОВ */}
@@ -152,7 +133,7 @@ export default function Home() {
           {[].map((img, index) => (
             <div className="product-card" key={index}>
               <Link to="/catalog">
-                <img src="/images/plant-in-hand.svg" alt={`Plant ${index + 1}`} />
+                <img src={process.env.PUBLIC_URL + "/images/plant-in-hand.svg"} alt={`Plant ${index + 1}`} />
                 <div className="product-name">Растение {index + 1}</div>
                 <div className="product-price">{85 + index * 10} TJS</div>
               </Link>
@@ -173,12 +154,12 @@ export default function Home() {
           </Link>
         </div>
         <div className="shop-image">
-          <img src="/images/plant-in-hand.svg" alt="Plant in hand" />
+          <img src={process.env.PUBLIC_URL + "/images/plant-in-hand.svg"} alt="Plant in hand" />
         </div>
       </section>
 
       {/* ФУТЕР */}
-      <footer className="footer">
+      {/* <footer className="footer">
         <div className="footer-column">
           <span className="logo">Sakura Khujand</span>
           <p>
@@ -207,14 +188,14 @@ export default function Home() {
             </a>
           </p>
           <p>
-            <a href="#">Whatsapp: 928382333</a>
+            Whatsapp: 928382333
           </p>
         </div>
 
         <div className="footer-column">
           <h4>Продукт</h4>
           <p><Link to="/catalog">Растение</Link></p>
-          <p><a href="#">Другие растения</a></p>
+          <p><Link to="/catalog">Другие растения</Link></p>
         </div>
 
         <div className="footer-column">
@@ -225,7 +206,7 @@ export default function Home() {
             placeholder="Введите адрес электронной почты"
           />
         </div>
-      </footer>
+      </footer> */}
     </div>
   );
 }
